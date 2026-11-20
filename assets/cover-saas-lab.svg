@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-label="SaaS Validation Lab — Orquestrador Autônomo de Auditoria, Segurança e LGPD">
+  <rect width="800" height="450" rx="14" fill="#0D1117" stroke="#30363D" stroke-width="1.5"/>
+  <text x="48" y="60" fill="#3FB950" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="12.5" font-weight="700" letter-spacing="1.4">AUDITORIA AUTÔNOMA · SEGURANÇA · CONFORMIDADE LGPD</text>
+  <text x="48" y="102" fill="#F0F6FC" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="33" font-weight="700">SaaS Validation Lab</text>
+  <text x="48" y="132" fill="#8B949E" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15.5">Orquestração de 11 agentes com Validador Independente anti-alucinação</text>
+
+  <g transform="translate(48, 174)">
+    <rect width="336" height="156" rx="10" fill="#161B22" stroke="#30363D" stroke-width="1.2"/>
+    <text x="20" y="34" fill="#58A6FF" font-family="ui-monospace, Consolas, monospace" font-size="12.5" font-weight="700">ORQUESTRAÇÃO &amp; RESILIÊNCIA</text>
+    <text x="20" y="68" fill="#E6EDF3" font-family="-apple-system, 'Segoe UI', Arial, sans-serif" font-size="14.5">• Fila persistente SQLite WAL (14 tabelas)</text>
+    <text x="20" y="98" fill="#E6EDF3" font-family="-apple-system, 'Segoe UI', Arial, sans-serif" font-size="14.5">• Workers com locks, heartbeat &amp; recovery</text>
+    <text x="20" y="128" fill="#E6EDF3" font-family="-apple-system, 'Segoe UI', Arial, sans-serif" font-size="14.5">• LiveAgentStream &amp; Kanban 6 colunas</text>
+  </g>
+  <g transform="translate(416, 174)">
+    <rect width="336" height="156" rx="10" fill="#161B22" stroke="#30363D" stroke-width="1.2"/>
+    <text x="20" y="34" fill="#3FB950" font-family="ui-monospace, Consolas, monospace" font-size="12.5" font-weight="700">CONFIABILIDADE &amp; APPSEC</text>
+    <text x="20" y="68" fill="#E6EDF3" font-family="-apple-system, 'Segoe UI', Arial, sans-serif" font-size="14.5">• Validador Independente (Hash SHA-256)</text>
+    <text x="20" y="98" fill="#E6EDF3" font-family="-apple-system, 'Segoe UI', Arial, sans-serif" font-size="14.5">• Defesa Prompt Injection, SSRF &amp; PII</text>
+    <text x="20" y="128" fill="#E6EDF3" font-family="-apple-system, 'Segoe UI', Arial, sans-serif" font-size="14.5">• Barreira humana &amp; conformidade LGPD</text>
+  </g>
+
+  <rect x="48" y="358" width="704" height="44" rx="9" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+  <text x="68" y="385" fill="#8B949E" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="13">Node.js · TypeScript · Express · SQLite WAL · React 18 · Vitest · Docker</text>
+</svg>

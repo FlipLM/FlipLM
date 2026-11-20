@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 120" width="860" height="120" role="img" aria-label="Panorama do Portfólio: 6 Projetos Auditados, 5 Estudos de Caso Privados, 2 Repositórios Públicos e Case 57.064 RPS">
+  <rect width="860" height="120" rx="12" fill="#161B22" stroke="#30363D" stroke-width="1.2"/>
+  <g transform="translate(16, 14)">
+    <rect width="196" height="92" rx="10" fill="#0D1117" stroke="#30363D" stroke-width="1.2"/>
+    <text x="16" y="28" fill="#8B949E" font-family="ui-monospace, Consolas, monospace" font-size="10.5" font-weight="600" letter-spacing="0.4">PORTFÓLIO AUDITADO</text>
+    <text x="16" y="59" fill="#F0F6FC" font-family="-apple-system, 'Segoe UI', Arial, sans-serif" font-size="24" font-weight="700">6 Projetos</text>
+    <text x="16" y="80" fill="#A3CC63" font-family="-apple-system, 'Segoe UI', Arial, sans-serif" font-size="11.5" font-weight="600">SaaS, Web, Busca &amp; Automação</text>
+  </g>
+  <g transform="translate(227, 14)">
+    <rect width="196" height="92" rx="10" fill="#0D1117" stroke="#30363D" stroke-width="1.2"/>
+    <text x="16" y="28" fill="#8B949E" font-family="ui-monospace, Consolas, monospace" font-size="10.5" font-weight="600" letter-spacing="0.4">ESTUDOS DE CASO</text>
+    <text x="16" y="59" fill="#F0F6FC" font-family="-apple-system, 'Segoe UI', Arial, sans-serif" font-size="24" font-weight="700">5 Privados</text>
+    <text x="16" y="80" fill="#A3CC63" font-family="-apple-system, 'Segoe UI', Arial, sans-serif" font-size="11.5" font-weight="600">Documentados sem expor IP</text>
+  </g>
+  <g transform="translate(438, 14)">
+    <rect width="196" height="92" rx="10" fill="#0D1117" stroke="#30363D" stroke-width="1.2"/>
+    <text x="16" y="28" fill="#8B949E" font-family="ui-monospace, Consolas, monospace" font-size="10.5" font-weight="600" letter-spacing="0.4">CÓDIGO ABERTO</text>
+    <text x="16" y="59" fill="#F0F6FC" font-family="-apple-system, 'Segoe UI', Arial, sans-serif" font-size="24" font-weight="700">2 Públicos</text>
+    <text x="16" y="80" fill="#A3CC63" font-family="-apple-system, 'Segoe UI', Arial, sans-serif" font-size="11.5" font-weight="600">Prospector B2B &amp; Rastreio Fácil</text>
+  </g>
+  <g transform="translate(649, 14)">
+    <rect width="196" height="92" rx="10" fill="#0D1117" stroke="#30363D" stroke-width="1.2"/>
+    <text x="16" y="28" fill="#8B949E" font-family="ui-monospace, Consolas, monospace" font-size="10.5" font-weight="600" letter-spacing="0.4">CASE DE PERFORMANCE</text>
+    <text x="16" y="59" fill="#F0F6FC" font-family="-apple-system, 'Segoe UI', Arial, sans-serif" font-size="24" font-weight="700">57.064 RPS</text>
+    <text x="16" y="80" fill="#A3CC63" font-family="-apple-system, 'Segoe UI', Arial, sans-serif" font-size="11.5" font-weight="600">FisioTeraHub · 1 vCPU (RFC 9111)</text>
+  </g>
+</svg>
