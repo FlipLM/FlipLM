@@ -6,7 +6,7 @@
   </picture>
 </p>
 
-<p align="center"><a href="#01-sobre-mim">01 · Sobre</a> &nbsp;&middot;&nbsp; <a href="#02-projetos-principais">02 · Projetos</a> &nbsp;&middot;&nbsp; <a href="#04-estudos-de-caso">03 · Estudos de Caso</a> &nbsp;&middot;&nbsp; <a href="#05-competências-técnicas">04 · Competências</a> &nbsp;&middot;&nbsp; <a href="#06-conexão-de-experiência">05 · Trajetória</a> &nbsp;&middot;&nbsp; <a href="#08-vamos-conversar">06 · Contato</a></p>
+<p align="center"><a href="#01-sobre-mim">01&nbsp;&middot;&nbsp;Sobre</a> &nbsp;&middot;&nbsp; <a href="#02-projetos-principais">02&nbsp;&middot;&nbsp;Projetos</a> &nbsp;&middot;&nbsp; <a href="#04-estudos-de-caso">03&nbsp;&middot;&nbsp;Estudos&nbsp;de&nbsp;Caso</a> &nbsp;&middot;&nbsp; <a href="#05-competências-técnicas">04&nbsp;&middot;&nbsp;Competências</a> &nbsp;&middot;&nbsp; <a href="#06-conexão-de-experiência">05&nbsp;&middot;&nbsp;Trajetória</a> &nbsp;&middot;&nbsp; <a href="#08-vamos-conversar">06&nbsp;&middot;&nbsp;Contato</a></p>
 
 ---
 
