@@ -102,7 +102,7 @@ Essa base multidisciplinar faz diferença prática no resultado final: antes de 
       <p><strong>O Problema:</strong> preparação para a certificação IREB CPRE Foundation Level dispersa em PDFs estáticos, sem revisão espaçada, sem simulados realistas nem tutoria conceitual sem spoiler.</p>
       <p><strong>A Solução:</strong> plataforma PWA multiusuário (desktop e celular) com <strong>225 questões validadas</strong>, simulados cronometrados, revisão espaçada (SM-2), <strong>Prof. IREB em pixel art animado</strong> (popup arrastável e redimensionável no mobile), <strong>RAG sobre o Syllabus oficial IREB v3.x (EU 1–7)</strong> no PostgreSQL/Supabase com FTS em português, <strong>cascata Multi-IA gratuita</strong> (Groq → Cerebras → OpenRouter <code>:free</code> → Gemini), skill pedagógica parametrizável, Supabase Auth + RLS e cron Keep-Alive na Vercel.</p>
       <p><code>Next.js 15</code> <code>React 19</code> <code>TypeScript</code> <code>Supabase</code> <code>PostgreSQL FTS</code> <code>RAG</code> <code>PWA</code> <code>Vercel</code></p>
-      <p><a href="./cases/ireb-cpre-studio.md"><strong>Ler Estudo de Caso Completo →</strong></a></p>
+      <p><a href="./cases/ireb-cpre-studio.md"><strong>Ler Estudo de Caso Completo →</strong></a> &nbsp;&middot;&nbsp; <a href="https://ireb-cpre-studio.vercel.app"><strong>Acessar Plataforma →</strong></a></p>
     </td>
   </tr>
 </table>
@@ -174,7 +174,7 @@ Projetos privados de valor comercial, institucional ou colaborativo documentados
 | **FisioTeraHub** | HealthTech / SaaS | Multi-tenant, ANS TISS 4.01/TUSS, COFFITO/LGPD e **57.064 RPS** em 1 vCPU | [`cases/fisioterahub.md`](./cases/fisioterahub.md) | [fisioterahub.com](https://fisioterahub.com) |
 | **Vulpto** | ERP / Detailing | Vistoria 360º SVG, DRE gerencial real, estoque químico, RBAC e CRM Curva ABC | [`cases/vulpto.md`](./cases/vulpto.md) | [vulpto.duckdns.org](https://vulpto.duckdns.org/) |
 | **Associação Cia do Lacre** | Terceiro Setor | Transparência MROSC (18 PDFs embutidos — Ministério da Cultura) e CMS inclusivo | [`cases/cia-do-lacre.md`](./cases/cia-do-lacre.md) | [cia-do-lacre.vercel.app](https://cia-do-lacre.vercel.app/) |
-| **CPRE Studio (IREB)** | EdTech / AI RAG | 225 questões, RAG Syllabus oficial (Postgres FTS), cascata Multi-IA, Auth+RLS e PWA | [`cases/ireb-cpre-studio.md`](./cases/ireb-cpre-studio.md) | *Ambiente privado* |
+| **CPRE Studio (IREB)** | EdTech / AI RAG | 225 questões, RAG Syllabus oficial (Postgres FTS), cascata Multi-IA, Auth+RLS e PWA | [`cases/ireb-cpre-studio.md`](./cases/ireb-cpre-studio.md) | [ireb-cpre-studio.vercel.app](https://ireb-cpre-studio.vercel.app) |
 | **MTGrimo** | Search & NLP | Mecanismo autoral de busca de cartas, APIs de bases de dados e parser PT-BR determinístico | [`cases/mtgrimo.md`](./cases/mtgrimo.md) | [mtgrimo.com](https://mtgrimo.com/) |
 | **SaaS Validation Lab** | AppSec & Governança IA | Orquestrador daemon SQLite WAL, 11 agentes, defesa SSRF/Prompt Injection e Validador SHA-256 | [`cases/saas-validation-lab.md`](./cases/saas-validation-lab.md) | *Ambiente privado* |
 
