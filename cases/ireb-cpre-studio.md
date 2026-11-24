@@ -2,6 +2,7 @@
 
 **Domínio:** EdTech / Certificação em Engenharia de Requisitos (IREB CPRE Foundation Level)  
 **Repositório:** Privado (`FlipLM/ireb-cpre-studio`)  
+**Demonstração:** https://ireb-cpre-studio.vercel.app  
 **Stack:** `Next.js 15` · `React 19` · `TypeScript` · `Tailwind CSS 4` · `Supabase (PostgreSQL + Auth + RLS + FTS)` · `Vercel` · `PWA` · `Vitest`
 
 ---
