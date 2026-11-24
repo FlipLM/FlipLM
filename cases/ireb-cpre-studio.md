@@ -1,9 +1,11 @@
 # Case 04 — CPRE Studio (Plataforma de Estudos IREB CPRE-FL com IA & RAG)
 
 **Domínio:** EdTech / Certificação em Engenharia de Requisitos (IREB CPRE Foundation Level)  
-**Repositório:** Privado (`FlipLM/ireb-cpre-studio`)  
+**Repositório:** Público ([`FlipLM/ireb-cpre-studio`](https://github.com/FlipLM/ireb-cpre-studio))  
 **Demonstração:** https://ireb-cpre-studio.vercel.app  
 **Stack:** `Next.js 15` · `React 19` · `TypeScript` · `Tailwind CSS 4` · `Supabase (PostgreSQL + Auth + RLS + FTS)` · `Vercel` · `PWA` · `Vitest`
+
+[← Voltar ao Portfólio Principal](../README.md)
 
 ---
 
@@ -28,7 +30,27 @@ O **CPRE Studio** foi construído como uma plataforma Full Stack completa de est
 
 ---
 
-## 3. Evidências de Engenharia
+## 3. Capturas de Tela (Ambiente em Produção)
+
+### Modo Estudo com Prof. IREB (Tutor Interativo em Pixel Art + RAG)
+![CPRE Studio — Modo Estudo com Prof. IREB](../assets/ireb-estudar.png)
+
+### Visão Geral (Dashboard Real e Recomendações Priorizadas)
+![CPRE Studio — Visão Geral](../assets/ireb-dashboard.png)
+
+### Configurador de Simulados Cronometrados
+![CPRE Studio — Simulados](../assets/ireb-simulados.png)
+
+### Relatórios e Mapa de Domínio por Assunto
+![CPRE Studio — Relatórios e Mapa de Domínio](../assets/ireb-relatorios.png)
+
+---
+
+## 4. Evidências de Engenharia
 
 - **Integridade testada com Vitest:** suíte automatizada validando as 225 questões, gabaritos únicos e múltiplos, ausência de duplicidades, resolução de imagens e bloqueio de gabarito durante simulados em andamento.
 - **Arquitetura resiliente Custo Zero:** hospedagem serverless na Vercel + PostgreSQL/Auth no Supabase + Keep-Alive automático + fallback multi-provedor de IA.
+
+---
+
+[← Voltar ao Portfólio Principal](../README.md)

@@ -93,16 +93,20 @@ Essa base multidisciplinar faz diferença prática no resultado final: antes de 
   <tr>
     <td width="46%" valign="top">
       <a href="./cases/ireb-cpre-studio.md">
-        <img src="./assets/cover-ireb-cpre-studio.svg" alt="CPRE Studio — Plataforma de Estudos IREB CPRE-FL com IA, RAG e PWA" width="100%">
+        <img src="./assets/ireb-estudar.png" alt="CPRE Studio — Modo Estudo com Prof. IREB em Pixel Art" width="100%">
+      </a>
+      <br/><br/>
+      <a href="./cases/ireb-cpre-studio.md">
+        <img src="./assets/ireb-dashboard.png" alt="CPRE Studio — Visão Geral e Desempenho por Assunto" width="100%">
       </a>
     </td>
     <td width="54%" valign="top">
-      <sub><strong>CASE 04 &middot; EDTECH, AI RAG &amp; MOBILE PWA &middot; PRIVADO</strong></sub>
+      <sub><strong>CASE 04 &middot; EDTECH, AI RAG &amp; MOBILE PWA &middot; PÚBLICO</strong></sub>
       <h3>CPRE Studio — IREB CPRE-FL com Prof. IA</h3>
       <p><strong>O Problema:</strong> preparação para a certificação IREB CPRE Foundation Level dispersa em PDFs estáticos, sem revisão espaçada, sem simulados realistas nem tutoria conceitual sem spoiler.</p>
       <p><strong>A Solução:</strong> plataforma PWA multiusuário (desktop e celular) com <strong>225 questões validadas</strong>, simulados cronometrados, revisão espaçada (SM-2), <strong>Prof. IREB em pixel art animado</strong> (popup arrastável e redimensionável no mobile), <strong>RAG sobre o Syllabus oficial IREB v3.x (EU 1–7)</strong> no PostgreSQL/Supabase com FTS em português, <strong>cascata Multi-IA gratuita</strong> (Groq → Cerebras → OpenRouter <code>:free</code> → Gemini), skill pedagógica parametrizável, Supabase Auth + RLS e cron Keep-Alive na Vercel.</p>
       <p><code>Next.js 15</code> <code>React 19</code> <code>TypeScript</code> <code>Supabase</code> <code>PostgreSQL FTS</code> <code>RAG</code> <code>PWA</code> <code>Vercel</code></p>
-      <p><a href="./cases/ireb-cpre-studio.md"><strong>Ler Estudo de Caso Completo →</strong></a> &nbsp;&middot;&nbsp; <a href="https://ireb-cpre-studio.vercel.app"><strong>Acessar Plataforma →</strong></a></p>
+      <p><a href="./cases/ireb-cpre-studio.md"><strong>Ler Estudo de Caso Completo →</strong></a> &nbsp;&middot;&nbsp; <a href="https://github.com/FlipLM/ireb-cpre-studio"><strong>Ver Repositório Público →</strong></a> &nbsp;&middot;&nbsp; <a href="https://ireb-cpre-studio.vercel.app"><strong>Acessar Plataforma →</strong></a></p>
     </td>
   </tr>
 </table>
