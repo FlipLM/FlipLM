@@ -4,7 +4,7 @@
 
 ### Desenvolvedor Full Stack & Analista de Sistemas
 
-*Construindo sistemas reais, auditáveis e de alta performance — de SaaS multi-tenant (57k RPS em 1 vCPU) a plataformas EdTech com IA, RAG e RPG Local-First.*
+*Construindo sistemas reais, auditáveis e de alta performance — de SaaS multi-tenant a plataformas EdTech com IA.*
 
 <p>
   <a href="https://www.linkedin.com/in/filipe-lisboa-martins/"><img src="https://img.shields.io/badge/LinkedIn-Filipe_Lisboa_Martins-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
