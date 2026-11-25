@@ -93,19 +93,19 @@ Essa base multidisciplinar faz diferença prática no resultado final: antes de 
   <tr>
     <td width="46%" valign="top">
       <a href="./cases/ireb-cpre-studio.md">
-        <img src="./assets/ireb-estudar.png" alt="CPRE Studio — Modo Estudo com Prof. IREB em Pixel Art" width="100%">
+        <img src="./assets/ireb-dashboard.png" alt="CPRE Studio — Visão Geral (Home SWR 0ms)" width="100%">
       </a>
       <br/><br/>
       <a href="./cases/ireb-cpre-studio.md">
-        <img src="./assets/ireb-dashboard.png" alt="CPRE Studio — Visão Geral e Desempenho por Assunto" width="100%">
+        <img src="./assets/ireb-estudar.png" alt="CPRE Studio — Modo Estudo com Prof. IREB em Pixel Art" width="100%">
       </a>
     </td>
     <td width="54%" valign="top">
-      <sub><strong>CASE 04 &middot; EDTECH, AI RAG &amp; MOBILE PWA &middot; PÚBLICO</strong></sub>
-      <h3>CPRE Studio — IREB CPRE-FL com Prof. IA</h3>
-      <p><strong>O Problema:</strong> preparação para a certificação IREB CPRE Foundation Level dispersa em PDFs estáticos, sem revisão espaçada, sem simulados realistas nem tutoria conceitual sem spoiler.</p>
-      <p><strong>A Solução:</strong> plataforma PWA multiusuário (desktop e celular) com <strong>225 questões validadas</strong>, simulados cronometrados, revisão espaçada (SM-2), <strong>Prof. IREB em pixel art animado</strong> (popup arrastável e redimensionável no mobile), <strong>RAG sobre o Syllabus oficial IREB v3.x (EU 1–7)</strong> no PostgreSQL/Supabase com FTS em português, <strong>cascata Multi-IA gratuita</strong> (Groq → Cerebras → OpenRouter <code>:free</code> → Gemini), skill pedagógica parametrizável, Supabase Auth + RLS e cron Keep-Alive na Vercel.</p>
-      <p><code>Next.js 15</code> <code>React 19</code> <code>TypeScript</code> <code>Supabase</code> <code>PostgreSQL FTS</code> <code>RAG</code> <code>PWA</code> <code>Vercel</code></p>
+      <sub><strong>CASE 04 &middot; EDTECH, AI RAG, RPG LOCAL-FIRST &amp; MOBILE PWA &middot; PÚBLICO</strong></sub>
+      <h3>CPRE Studio — IREB CPRE-FL com Prof. IA &amp; Jornada do Herói RPG</h3>
+      <p><strong>O Problema:</strong> preparação para a certificação IREB CPRE Foundation Level dispersa em PDFs estáticos, sem revisão espaçada, sem simulados realistas nem engajamento contínuo.</p>
+      <p><strong>A Solução:</strong> plataforma PWA multiusuário (desktop e celular) com <strong>225 questões validadas</strong>, Home em <strong>Visão Geral com <em>Stale-While-Revalidate</em> (0ms)</strong> e queries deduplicadas (16 → 6), simulados cronometrados, revisão espaçada (SM-2), <strong>Prof. IREB em pixel art animado</strong>, <strong>RAG sobre o Syllabus oficial IREB v3.x (EU 1–7)</strong> no PostgreSQL/Supabase com FTS em português, <strong>cascata Multi-IA gratuita</strong> (Groq → Cerebras → OpenRouter <code>:free</code> → Gemini) e o <strong>Módulo RPG Jornada do Herói</strong> (4 regiões, 40 níveis, combate <em>Local-First</em> &lt; 10ms, dano proporcional em múltipla escolha, baralho aleatório sem repetição, chefes discursivos com IA + RAG e trilha chiptune Web Audio).</p>
+      <p><code>Next.js 15</code> <code>React 19</code> <code>TypeScript</code> <code>Supabase RLS</code> <code>RAG</code> <code>Local-First</code> <code>Vitest (19)</code> <code>PWA</code></p>
       <p><a href="./cases/ireb-cpre-studio.md"><strong>Ler Estudo de Caso Completo →</strong></a> &nbsp;&middot;&nbsp; <a href="https://github.com/FlipLM/ireb-cpre-studio"><strong>Ver Repositório Público →</strong></a> &nbsp;&middot;&nbsp; <a href="https://ireb-cpre-studio.vercel.app"><strong>Acessar Plataforma →</strong></a></p>
     </td>
   </tr>
@@ -113,24 +113,24 @@ Essa base multidisciplinar faz diferença prática no resultado final: antes de 
 
 ---
 
-## 03. Engenharia, Busca e Automação
+## 03. Engenharia, Inteligência de Mercado, Busca e Automação
 
 <table>
   <tr>
-    <td width="33%" valign="top">
-      <a href="https://github.com/FlipLM/Prospector">
+    <td width="33%\" valign="top">
+      <a href="https://github.com/FlipLM/market-intelligence-ai">
         <picture>
           <source media="(prefers-color-scheme: dark)" srcset="./assets/cover-prospector-dark.svg">
           <source media="(prefers-color-scheme: light)" srcset="./assets/cover-prospector-light.svg">
-          <img src="./assets/cover-prospector-light.svg" alt="Prospector B2B e Mini-CRM" width="100%">
+          <img src="./assets/cover-prospector-light.svg" alt="Market Intelligence AI — Inteligência de Mercado B2B com Proveniência Auditada" width="100%">
         </picture>
       </a>
       <br/><br/>
       <img src="./assets/badge-publico.svg" alt="Código Público" height="20">
-      <h4>Prospector B2B</h4>
-      <p>Automação Playwright com streaming <strong>SSE em tempo real</strong>, validação de WhatsApp BR (DDD e 9º dígito), Mini-CRM com agenda de follow-ups e fallback local em memória.</p>
-      <p><code>Next.js 16</code> <code>React 19</code> <code>Playwright</code> <code>Appwrite</code></p>
-      <p><a href="https://github.com/FlipLM/Prospector"><strong>Ver Repositório Público →</strong></a></p>
+      <h4>Market Intelligence AI</h4>
+      <p>Plataforma B2B de auditoria de nichos e CNPJs recém-abertos com <strong>proveniência obrigatória (<code>ProvenanceField&lt;T&gt;</code>)</strong> via BrasilAPI, MinhaReceita e IBGE, abordagem manual via WhatsApp anti-spam e suíte automatizada de aceite.</p>
+      <p><code>Next.js 16</code> <code>TypeScript</code> <code>BrasilAPI</code> <code>IBGE</code></p>
+      <p><a href="https://github.com/FlipLM/market-intelligence-ai"><strong>Ver Repositório Público →</strong></a></p>
     </td>
     <td width="33%" valign="top">
       <a href="./cases/mtgrimo.md">
@@ -165,20 +165,20 @@ Essa base multidisciplinar faz diferença prática no resultado final: antes de 
   </tr>
 </table>
 
-<sub><strong>Complemento open-source mobile:</strong> <a href="https://github.com/FlipLM/RastreioFacil"><strong>RastreioFácil</strong></a> (<code>Flutter / Dart</code>) — aplicativo acadêmico para cadastro local de encomendas (<code>Provider</code> + <code>SharedPreferences</code>) e acesso rápido a transportadoras via <code>WebView</code>.</sub>
+<sub><strong>Outros projetos &amp; repositórios públicos:</strong> <a href="https://github.com/FlipLM/RastreioFacil"><strong>RastreioFácil</strong></a> (<code>Flutter / Dart</code> — rastreio de encomendas com <code>Provider</code> + <code>WebView</code>) &middot; <a href="https://github.com/FlipLM/estetica-automotiva"><strong>Estética Automotiva</strong></a> (landing e vitrine web) &middot; <strong>Prospector B2B</strong> (privado — automação Playwright + SSE + Mini-CRM).</sub>
 
 ---
 
 ## 04. Estudos de Caso
 
-Projetos privados de valor comercial, institucional ou colaborativo documentados sem exposição de código proprietário, credenciais ou dados de clientes:
+Projetos de valor comercial, institucional, educacional ou colaborativo documentados com arquitetura e evidências técnicas:
 
 | Projeto | Domínio | Diferencial Técnico Comprovado | Estudo de Caso | Demonstração |
 | :--- | :--- | :--- | :--- | :--- |
 | **FisioTeraHub** | HealthTech / SaaS | Multi-tenant, ANS TISS 4.01/TUSS, COFFITO/LGPD e **57.064 RPS** em 1 vCPU | [`cases/fisioterahub.md`](./cases/fisioterahub.md) | [fisioterahub.com](https://fisioterahub.com) |
 | **Vulpto** | ERP / Detailing | Vistoria 360º SVG, DRE gerencial real, estoque químico, RBAC e CRM Curva ABC | [`cases/vulpto.md`](./cases/vulpto.md) | [vulpto.duckdns.org](https://vulpto.duckdns.org/) |
 | **Associação Cia do Lacre** | Terceiro Setor | Transparência MROSC (18 PDFs embutidos — Ministério da Cultura) e CMS inclusivo | [`cases/cia-do-lacre.md`](./cases/cia-do-lacre.md) | [cia-do-lacre.vercel.app](https://cia-do-lacre.vercel.app/) |
-| **CPRE Studio (IREB)** | EdTech / AI RAG | 225 questões, RAG Syllabus oficial (Postgres FTS), cascata Multi-IA, Auth+RLS e PWA | [`cases/ireb-cpre-studio.md`](./cases/ireb-cpre-studio.md) | [ireb-cpre-studio.vercel.app](https://ireb-cpre-studio.vercel.app) |
+| **CPRE Studio (IREB)** | EdTech / AI RAG / RPG | 225 questões, RPG *Local-First* (&lt; 10ms), Home SWR (0ms), RAG Syllabus (Postgres FTS), cascata Multi-IA e 19 testes Vitest | [`cases/ireb-cpre-studio.md`](./cases/ireb-cpre-studio.md) | [ireb-cpre-studio.vercel.app](https://ireb-cpre-studio.vercel.app) |
 | **MTGrimo** | Search & NLP | Mecanismo autoral de busca de cartas, APIs de bases de dados e parser PT-BR determinístico | [`cases/mtgrimo.md`](./cases/mtgrimo.md) | [mtgrimo.com](https://mtgrimo.com/) |
 | **SaaS Validation Lab** | AppSec & Governança IA | Orquestrador daemon SQLite WAL, 11 agentes, defesa SSRF/Prompt Injection e Validador SHA-256 | [`cases/saas-validation-lab.md`](./cases/saas-validation-lab.md) | *Ambiente privado* |
 
@@ -198,7 +198,7 @@ Projetos privados de valor comercial, institucional ou colaborativo documentados
     </td>
     <td width="33%" valign="top">
       <strong>Dados &amp; Persistência</strong><br/>
-      <sub>PostgreSQL &middot; SQLite WAL &middot; Supabase &middot; Appwrite &middot; Redis &middot; Modelagem Multi-tenant</sub>
+      <sub>PostgreSQL &middot; SQLite WAL &middot; Supabase &middot; Appwrite &middot; Redis &middot; Modelagem Multi-tenant &middot; RAG / FTS</sub>
     </td>
   </tr>
   <tr>
@@ -212,7 +212,7 @@ Projetos privados de valor comercial, institucional ou colaborativo documentados
     </td>
     <td width="33%" valign="top">
       <strong>Negócios &amp; Qualidade</strong><br/>
-      <sub>Requisitos &middot; Homologação &middot; Documentação &middot; Vitest &middot; Locust &middot; LGPD &middot; TISS &middot; MROSC</sub>
+      <sub>Requisitos (IREB) &middot; Homologação &middot; Documentação &middot; Vitest &middot; Locust &middot; LGPD &middot; TISS &middot; MROSC</sub>
     </td>
   </tr>
 </table>
@@ -237,7 +237,7 @@ Projetos privados de valor comercial, institucional ou colaborativo documentados
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./assets/panorama-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="./assets/panorama-light.svg">
-    <img src="./assets/panorama-light.svg" alt="Panorama verificado do portfólio: 7 Projetos Auditados, 6 Estudos de Caso Privados, 2 Repositórios Públicos e Case 57.064 RPS" width="100%">
+    <img src="./assets/panorama-light.svg" alt="Panorama verificado do portfólio: Projetos Auditados, Estudos de Caso, Repositórios Públicos e Case 57.064 RPS" width="100%">
   </picture>
 </p>
 
