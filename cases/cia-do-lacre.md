@@ -1,145 +1,151 @@
-# Estudo de Caso — Associação Cia do Lacre (Portal Institucional, Transparência MROSC & Painel Inclusivo)
+<div align="center">
 
-> **Status do repositório:** Privado (Projeto Institucional de Cliente / Terceiro Setor)  
-> **Nota de confidencialidade:** este estudo de caso descreve o trabalho de desenvolvimento, design e manutenção sem expor código-fonte, credenciais, fluxos internos administrativos ou dados restritos da associação.
+# 🌿 Associação Cia do Lacre — Portal Institucional, Transparência MROSC & CMS Inclusivo
 
-[← Voltar ao Portfólio Principal](../README.md)
+**Moda sustentável desde 1997 em Brasília-DF: design editorial *Olive System*, conformidade legal (Lei 13.019/2014 — Ministério da Cultura) e autonomia digital para artesãs 45+.**
 
----
+<p>
+  <img src="https://img.shields.io/badge/React-19-149ECA?style=for-the-badge&logo=react&logoColor=white" alt="React 19" />
+  <img src="https://img.shields.io/badge/Vite-8-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite 8" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-Olive_System-5C7536?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Olive System" />
+  <img src="https://img.shields.io/badge/Supabase-Auth_%2B_DB_%2B_Storage-3FCF8E?style=for-the-badge&logo=supabase&logoColor=white" alt="Supabase" />
+  <img src="https://img.shields.io/badge/Vercel-Edge_SPA-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel" />
+</p>
 
-## 1. Contexto
+<p>
+  <img src="https://img.shields.io/badge/Se%C3%A7%C3%B5es_P%C3%BAblicas-10-5C7536?style=flat-square" alt="10 Seções" />
+  <img src="https://img.shields.io/badge/Transpar%C3%AAncia_MROSC-18_PDFs_Embutidos-10b981?style=flat-square" alt="18 PDFs" />
+  <img src="https://img.shields.io/badge/Admin_Inclusivo-10_Telas_45%2B-f59e0b?style=flat-square" alt="Admin Inclusivo" />
+  <img src="https://img.shields.io/badge/Site_Oficial-cia--do--lacre.vercel.app-000000?style=flat-square" alt="Site Oficial" />
+</p>
 
-A **Associação Artesanal Moda e Tradição — Cia do Lacre**, fundada em 1997 em Brasília-DF, transforma lacres de alumínio em moda autoral, arte sustentável e geração de renda comunitária. O projeto envolveu a reconstrução completa de sua presença digital institucional e a criação de um ambiente administrativo pensado especificamente para autonomia de uso pelas próprias artesãs e gestoras comunitárias.
+[← Voltar ao Portfólio Principal](../README.md) • [🌐 Acessar Site Oficial](https://cia-do-lacre.vercel.app/) • [📸 Tour pelas Seções](#-tour-pelas-seções-prints-reais) • [🧠 Arquitetura](#-arquitetura-custo-zero-sem-vps)
 
----
+</div>
 
-## 2. Problema Identificado
-
-A associação precisava superar três desafios concretos:
-1. **Dependência tecnológica legada:** desvincular o site de plataformas externas fechadas, reduzindo custos recorrentes e garantindo propriedade total sobre o código e o conteúdo.
-2. **Conformidade legal rigorosa:** apresentar a prestação de contas e documentos de parcerias públicas conforme as exigências do **Ministério da Cultura** sob o **Marco Regulatório das Organizações da Sociedade Civil (MROSC — Lei 13.019/2014)**, de forma organizada, acessível e sem obrigar o cidadão a baixar arquivos cegamente ou abrir múltiplas abas.
-3. **Barreira de usabilidade na manutenção diária:** painéis administrativos técnicos tradicionais são complexos para usuárias 45+ sem familiaridade técnica prévia, gerando dependência constante de suporte externo para publicar fotos, notícias, projetos ou novos relatórios.
-
----
-
-## 3. Objetivo
-
-Entregar uma aplicação web moderna, leve, fiel à identidade visual da associação e preparada para longo prazo:
-- Refletir a sofisticação do artesanato sustentável com design editorial autoral (sem templates genéricos).
-- Garantir transparência pública auditável e navegação simples no **Portal da Transparência MROSC**.
-- Fornecer um **Painel Administrativo inclusivo** com linguagem clara, feedbacks explícitos e autonomia total para atualização de conteúdo.
+> **Nota de confidencialidade:** projeto institucional de terceiro setor em produção. O painel administrativo restrito (10 telas inclusivas) não é exposto nos prints públicos por segurança da associação.
 
 ---
 
-## 4. Solução Desenvolvida
+## 💡 O Desafio
 
-Foi desenvolvida uma aplicação SPA moderna em **React 19 + Vite 8 + Tailwind CSS**, hospedada na **Vercel** e integrada ao **Supabase** (autenticação, banco e mídia), acompanhada por função serverless de rotina (`/api/keepalive`) para preservar a disponibilidade contínua do ambiente:
-- **Identidade Visual (*Olive System*):** paleta verde oliva oficial (`#5C7536`, `#3D4F22`, `#1E2612`, `#A3CC63`, `#F7F9F5`) combinada à tipografia editorial (`Fraunces` + `Plus Jakarta Sans`) e ao emblema íntegro do lacre.
-- **Portal da Transparência MROSC:** organização por projetos em *accordions* claros com **visualizador embutido de documentos (`DocumentViewerModal`)** atendendo **18 PDFs oficiais** sem abrir novas abas.
-- **Painel Administrativo Inclusivo (10 páginas):** interface ergonômica voltada à clareza, contraste e prevenção de erros para gestão independente de diretoria, fotos do site, galeria, notícias, projetos, documentos de transparência e usuários.
+A **Associação Artesanal Moda e Tradição — Cia do Lacre** precisava se desvincular de plataformas fechadas, cumprir com rigor a **Lei Federal nº 13.019/2014 (MROSC / Ministério da Cultura)** exibindo 18 prestações de contas em PDF sem obrigar o cidadão a abrir abas externas, e oferecer um **Painel Administrativo inclusivo** para que as próprias artesãs 45+ atualizem fotos, notícias e projetos sem depender de suporte técnico.
 
 ---
 
-## 5. Principais Funcionalidades
+## 📸 Tour pelas Seções (Prints Reais)
 
-### Área Pública (10 Seções Institucionais)
-- **Home Editorial:** narrativa visual da associação, destaques e navegação fluida com animações leves (`GSAP` e `Embla Carousel`).
-- **Quem Somos:** história desde 1997, liderança (Mestra Chica Rosa) e governança.
-- **Projetos e Eventos:** vitrine de iniciativas (incluindo *Mãos Sustentáveis*) com páginas de detalhe dedicadas.
-- **Cursos:** apresentação dos **8 cursos oficiais** com chamada direta para inscrição/contato via WhatsApp.
-- **Portal da Transparência MROSC (Lei 13.019/2014 — Ministério da Cultura):** *accordions* por projeto/parceria e leitura embutida de 18 documentos oficiais em PDF.
-- **Como Posso Ajudar:** informações de apoio, PIX institucional e **Termo de Voluntariado** em conformidade com a **Lei 9.608/1998**.
-- **Galeria de Fotos (Lightbox), Vídeos (YouTube), Notícias com página de detalhe e Contatos.**
+### 1. Home Editorial & História (Quem Somos)
+Identidade visual proprietária (*Olive System*) com tipografia editorial (`Fraunces` + `Plus Jakarta Sans`), animações leves em GSAP e narrativa da associação fundada por Mestra Chica Rosa.
 
-### Painel Administrativo Inclusivo (Área Restrita)
-- 10 telas dedicadas: Login, Dashboard simplificado, Diretoria, Fotos do Site, Galeria, Notícias, Projetos, Transparência MROSC, Gestão de Usuários (com proteção contra remoção acidental da conta principal) e avisos contextuais.
-
----
-
-## 6. Tecnologias Utilizadas
-
-| Camada | Tecnologias Comprovadas |
-| :--- | :--- |
-| **Frontend & UI** | React 19, Vite 8, Tailwind CSS 3, React Router v7, Lucide React |
-| **Animação & Mídia** | GSAP 3, Embla Carousel, visualizador modal embutido de PDFs |
-| **Backend as a Service** | Supabase (`@supabase/supabase-js`) |
-| **Qualidade & Hospedagem** | Oxlint, Vercel (rewrites SPA + Serverless Function `/api/keepalive` via cron) |
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <img src="../assets/cia-home.png" alt="Cia do Lacre — Home Editorial" width="100%" /><br/>
+      <strong>Home Editorial (Olive System)</strong><br/>
+      <sub><code>https://cia-do-lacre.vercel.app/</code></sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="../assets/cia-quem-somos.png" alt="Cia do Lacre — Quem Somos" width="100%" /><br/>
+      <strong>Quem Somos &amp; Governança</strong><br/>
+      <sub>29 anos de impacto sociocultural no DF</sub>
+    </td>
+  </tr>
+</table>
 
 ---
 
-## 7. Arquitetura (Nível Conceitual Autorizado)
+### 2. Portal da Transparência Ativa (MROSC) & Projetos Comunitários
+Conformidade rigorosa com o **Ministério da Cultura** e **MPDFT**: busca por projeto/processo SEI, filtros por órgão parceiro, *accordions* organizados e **visualizador embutido de PDFs** sem abrir novas abas.
 
-```text
-[ Visitantes / Ministério da Cultura / Doadores ]    [ Artesãs / Gestoras (Admin) ]
-                       │                                           │
-                       ▼                                           ▼
-┌─────────────────────────────────────────────────────────────────────────────────┐
-│                     Vercel Edge + SPA React 19 / Vite 8                         │
-│  • 10 Seções Institucionais (Olive System)       • Painel Inclusivo (10 telas)  │
-│  • Transparência MROSC (18 PDFs embutidos)       • Serverless Cron /keepalive   │
-└─────────────────────────────────────────────────────────────────────────────────┘
-                                       │
-                                       ▼
-                     [ Supabase (Dados, Auth e Mídia) ]
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <img src="../assets/cia-transparencia.png" alt="Cia do Lacre — Portal da Transparência MROSC" width="100%" /><br/>
+      <strong>Portal da Transparência Ativa (Lei 13.019/2014)</strong><br/>
+      <sub>Busca por SEI, filtros por órgão e 18 PDFs embutidos</sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="../assets/cia-projetos.png" alt="Cia do Lacre — Projetos e Eventos" width="100%" /><br/>
+      <strong>Projetos &amp; Eventos</strong><br/>
+      <sub>Vitrine de iniciativas como <em>Mãos Sustentáveis</em></sub>
+    </td>
+  </tr>
+</table>
+
+---
+
+### 3. Oficinas Gratuitas, Galeria de Fotos & Voluntariado (Lei 9.608/1998)
+Divulgação dos **8 cursos autorais**, galeria fotográfica filtrável por projeto (34 registros reais com lightbox) e página de apoio/PIX + **Termo de Voluntariado** em conformidade legal.
+
+<table>
+  <tr>
+    <td align="center" width="33%">
+      <img src="../assets/cia-cursos.png" alt="Cia do Lacre — Oficinas e Cursos" width="100%" /><br/>
+      <strong>8 Cursos &amp; Oficinas</strong><br/>
+      <sub>Crochê no lacre, costura e upcycling</sub>
+    </td>
+    <td align="center" width="33%">
+      <img src="../assets/cia-galeria.png" alt="Cia do Lacre — Galeria de Fotos" width="100%" /><br/>
+      <strong>Galeria Fotográfica</strong><br/>
+      <sub>Filtros por projeto e lightbox</sub>
+    </td>
+    <td align="center" width="33%">
+      <img src="../assets/cia-apoiar.png" alt="Cia do Lacre — Como Posso Ajudar" width="100%" /><br/>
+      <strong>Apoiar &amp; Voluntariado</strong><br/>
+      <sub>PIX oficial e Lei 9.608/1998</sub>
+    </td>
+  </tr>
+</table>
+
+---
+
+### 📱 Experiência Mobile (Acessível no Celular)
+
+<table>
+  <tr>
+    <td align="center" width="25%">
+      <img src="../assets/cia-mobile-home.png" alt="Cia do Lacre Mobile — Home" width="100%" /><br/>
+      <strong>Home Mobile</strong>
+    </td>
+    <td align="center" width="25%">
+      <img src="../assets/cia-mobile-transparencia.png" alt="Cia do Lacre Mobile — Transparência" width="100%" /><br/>
+      <strong>Transparência MROSC</strong>
+    </td>
+    <td align="center" width="25%">
+      <img src="../assets/cia-mobile-cursos.png" alt="Cia do Lacre Mobile — Cursos" width="100%" /><br/>
+      <strong>Cursos Mobile</strong>
+    </td>
+    <td align="center" width="25%">
+      <img src="../assets/cia-mobile-galeria.png" alt="Cia do Lacre Mobile — Galeria" width="100%" /><br/>
+      <strong>Galeria Mobile</strong>
+    </td>
+  </tr>
+</table>
+
+---
+
+## 🧠 Arquitetura Custo Zero (Sem VPS)
+
+```mermaid
+flowchart LR
+    Pub["Visitantes • MinC • Doadores"] --> Edge["Vercel Edge\nSPA React 19 + Vite 8"]
+    Adm["Artesãs & Gestoras 45+\n(Painel Inclusivo 10 Telas)"] --> Edge
+    Edge --> Cron["Serverless Cron\n/api/keepalive"]
+    Edge <--> Supa[("Supabase\nAuth • PostgreSQL • Storage PDFs")]
 ```
 
----
+<details>
+<summary><strong>🛠️ Stack & Diretrizes de Design Inclusivo</strong></summary>
 
-## 8. Capturas Reais (Desktop & Mobile) & Identidade Visual Entregue
+- **Frontend:** React 19, Vite 8, Tailwind CSS, React Router v7, GSAP 3, Embla Carousel e visualizador modal embutido (`DocumentViewerModal`).
+- **Painel Inclusivo (10 telas):** botões largos, linguagem direta sem jargão técnico, confirmação explícita antes de ações destrutivas e proteção contra remoção acidental da conta principal.
+- **Hospedagem & Manutenção:** 100% serverless (Vercel + Supabase + `/api/keepalive`), eliminando custos fixos de VPS ou plataformas proprietárias.
 
-### 💻 Versão Desktop (`https://cia-do-lacre.vercel.app/`)
-<table>
-  <tr>
-    <td align="center" width="50%">
-      <img src="../assets/cia-home.png" alt="Associação Cia do Lacre — Portal Institucional" width="100%" /><br/>
-      <strong>Portal Institucional (Olive System)</strong><br/>
-      <sub>Identidade editorial, cursos e história desde 1997</sub>
-    </td>
-    <td align="center" width="50%">
-      <img src="../assets/cia-transparencia.png" alt="Associação Cia do Lacre — Portal da Transparência MROSC" width="100%" /><br/>
-      <strong>Portal da Transparência Ativa (MROSC)</strong><br/>
-      <sub>Lei 13.019/2014, filtros por órgão e visualizador embutido</sub>
-    </td>
-  </tr>
-</table>
-
-### 📱 Versão Mobile (Responsivo)
-<table>
-  <tr>
-    <td align="center" width="50%">
-      <img src="../assets/cia-mobile-home.png" alt="Cia do Lacre Mobile — Home Institucional" width="280" /><br/>
-      <strong>Home Mobile</strong><br/>
-      <sub>29 anos de atuação, 450+ mulheres capacitadas e 8 cursos</sub>
-    </td>
-    <td align="center" width="50%">
-      <img src="../assets/cia-mobile-transparencia.png" alt="Cia do Lacre Mobile — Transparência MROSC" width="280" /><br/>
-      <strong>Transparência MROSC Mobile</strong><br/>
-      <sub>Busca por projeto/SEI e consulta pública no celular</sub>
-    </td>
-  </tr>
-</table>
-
-### Síntese Visual & Estrutura Entregue
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="../assets/cover-cia-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="../assets/cover-cia-light.svg">
-  <img src="../assets/cover-cia-light.svg" alt="Associação Cia do Lacre — Portal Institucional e Transparência MROSC" width="100%">
-</picture>
+</details>
 
 ---
 
-## 9. Resultados Comprováveis
-
-- **Desvinculação completa** de plataforma legada, passando a operar sobre arquitetura limpa React/Vite + Supabase + Vercel sem necessidade de VPS dedicada.
-- **Conformidade documental MROSC:** acervo de **18 PDFs oficiais** publicados sob estrutura de *accordions* com visualização embutida na própria página.
-- **Autonomia operacional:** 10 telas administrativas dedicadas permitindo que a própria associação atualize notícias, galeria, diretoria, projetos e documentos de transparência com segurança e manutenção ativa.
-
----
-
-## 10. Link para Demonstração
-
-- **Site Público Oficial:** [https://cia-do-lacre.vercel.app/](https://cia-do-lacre.vercel.app/)
-
----
-
-[← Voltar ao Portfólio Principal](../README.md)
+<div align="center">
+  <a href="https://cia-do-lacre.vercel.app/"><strong>🌐 Acessar Cia do Lacre Oficial</strong></a> &nbsp;•&nbsp; <a href="../README.md"><strong>← Voltar ao Portfólio Principal</strong></a>
+</div>

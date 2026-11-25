@@ -1,128 +1,104 @@
-# Estudo de Caso — MTGrimo (Mecanismo Autoral de Busca de Cartas & NLP Determinístico)
+<div align="center">
 
-> **Status do repositório:** Privado (Projeto Colaborativo Autorizado para Estudo de Caso)  
-> **Nota de autoria e confidencialidade:** o projeto **MTGrimo** (`mtg-platform`) é uma plataforma completa desenvolvida em colaboração. Este estudo de caso destaca com transparência o meu papel específico no **desenvolvimento do mecanismo autoral de busca por cartas, integrações com APIs de bases de dados e conversão de linguagem natural (PT-BR) para o contexto do motor de busca**, sem expor código-fonte privado ou infraestrutura do projeto.
+# 🧙‍♂️ MTGrimo — Motor Autoral de Busca de Cartas & NLP Determinístico PT-BR
 
-[← Voltar ao Portfólio Principal](../README.md)
+**Pesquise em 118.000+ cartas de Magic: The Gathering falando português natural — sem alucinação de LLM, sem custo por token e com cotações em reais.**
 
----
+<p>
+  <img src="https://img.shields.io/badge/Rust-Axum_%2B_Tokio-000000?style=for-the-badge&logo=rust&logoColor=white" alt="Rust Axum" />
+  <img src="https://img.shields.io/badge/PostgreSQL-16_pg__trgm_%2B_GIN-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL 16" />
+  <img src="https://img.shields.io/badge/Redis-7_Cache-DC382D?style=for-the-badge&logo=redis&logoColor=white" alt="Redis 7" />
+  <img src="https://img.shields.io/badge/React-19_%2B_Vite_8-149ECA?style=for-the-badge&logo=react&logoColor=white" alt="React 19" />
+  <img src="https://img.shields.io/badge/Expo-React_Native_SQLite-000020?style=for-the-badge&logo=expo&logoColor=white" alt="Expo" />
+</p>
 
-## 1. Contexto
+<p>
+  <img src="https://img.shields.io/badge/Cat%C3%A1logo-118k%2B_Cartas_%7C_123k%2B_Faces-f97316?style=flat-square" alt="118k Cartas" />
+  <img src="https://img.shields.io/badge/Parser-NLP_PT--BR_100%25_Determin%C3%ADstico-10b981?style=flat-square" alt="NLP Determinístico" />
+  <img src="https://img.shields.io/badge/APIs-Scryfall_%7C_EDHREC_%7C_LigaMagic_BRL-6366f1?style=flat-square" alt="APIs" />
+  <img src="https://img.shields.io/badge/Produ%C3%A7%C3%A3o-mtgrimo.com-000000?style=flat-square" alt="Produção" />
+</p>
 
-O **MTGrimo** é um ecossistema multiplataforma (Web PWA + Mobile com persistência offline) voltado a jogadores de **Magic: The Gathering** (com foco especial no formato *Commander*), reunindo catálogo completo de **118.000+ cartas e 123.000+ faces**, análise de sinergias de metagame e cotações multimoeda em tempo real.
+[← Voltar ao Portfólio Principal](../README.md) • [🌐 Acessar MTGrimo](https://mtgrimo.com/) • [📸 Prints em Produção](#-prints-reais-em-produção) • [🧠 Pipeline NLP](#-pipeline-do-motor-de-busca-determinístico)
 
----
+</div>
 
-## 2. Problema Identificado
-
-Buscar cartas em um universo com mais de cem mil registros e milhares de interações de regras impõe duas barreiras sérias à experiência do usuário brasileiro:
-1. **Sintaxe técnica árida:** motores tradicionais exigem memorização de operadores específicos em inglês (ex.: `t:creature id<=bg o:"add"`), afastando jogadores que pensam em termos naturais em português.
-2. **Custo e imprevisibilidade de IA generativa:** delegar cada pesquisa de catálogo a um LLM externo introduz latência alta, custo variável por consulta e risco de traduções inconsistentes ou alucinadas.
-3. **Fontes de dados heterogêneas:** informações de texto/faces, metagame/sinergias e preços em reais/dólares vivem em bases externas distintas que precisam conversar com rapidez e consistência.
-
----
-
-## 3. Objetivo
-
-Projetar e estruturar um **mecanismo autoral de busca de cartas** capaz de:
-- Conectar-se e sincronizar dados de bases de referência de Magic: The Gathering via APIs.
-- Converter consultas escritas em **linguagem natural em português (PT-BR)** para o contexto estruturado do motor de busca de forma **100% determinística** (sem caixa-preta de IA generativa).
-- Entregar resultados rápidos, paginados e agrupados por edição sobre o catálogo completo de 118k+ cartas.
+> **Nota de autoria e confidencialidade:** o **MTGrimo** é um projeto colaborativo de código privado. Este estudo de caso documenta minha atuação específica no **mecanismo autoral de busca de cartas, integrações com APIs de bases de dados e conversor determinístico de linguagem natural PT-BR → AST → SQL**.
 
 ---
 
-## 4. Solução Desenvolvida (Foco na Minha Contribuição)
+## 💡 O Desafio
 
-Minha atuação concentrou-se no núcleo de busca e interpretação semântica que conecta a intenção do jogador à consulta estruturada no banco e às integrações de dados:
-- **Conexão com APIs de Bases de Dados:** integração de carga e enriquecimento do catálogo oficial (**Scryfall**, com 118.000+ cartas e 123.000+ faces), sinergias/metagame (**EDHREC**) e cotações multimoeda (**LigaMagic em BRL** e **Scryfall em USD**) com camada de cache em Redis.
-- **Conversão Determinística de Linguagem Natural (PT-BR):** pipeline composto por **léxico de domínio**, mapeamento de **palavras-chave e mecânicas** (tradução PT-BR → termos oficiais de regras/Oracle), parser para **Árvore Sintática Abstrata (AST)** e **construtor de consultas (`query_builder`)**.
-- **Indexação de Alta Performance:** consultas executadas sobre **PostgreSQL 16** com extensão `pg_trgm`, *Full-Text Search* e índices **GIN**, garantindo buscas tolerantes a variação de grafia e baixa latência mesmo em filtros combinados.
+Jogadores brasileiros de *Magic: The Gathering* (especialmente *Commander*) esbarravam em duas barreiras: memorizar sintaxes obscuras em inglês (`t:creature id<=bg o:"add"`) ou depender de LLMs caros, lentos e sujeitos a alucinações. A solução foi criar um **parser semântico PT-BR 100% determinístico** em Rust, conectado ao PostgreSQL (`pg_trgm` + `GIN`), Redis e APIs externas (**Scryfall**, **EDHREC** e **LigaMagic BRL**).
 
 ---
 
-## 5. Principais Funcionalidades do Ecossistema
-
-- **Busca em Linguagem Natural PT-BR & Sintaxe Estruturada:** aceita desde frases naturais em português até operadores estruturados combinados (tipo, cor/identidade WUBRG, custo de mana, texto de regras, raridade e legalidade).
-- **Paginação e Agrupamento por Edições:** consolidação de múltiplas reimpressões sem poluir os resultados.
-- **Integração de Dados e Cotações:** sincronização de cartas/faces (Scryfall), histórico de preços multimoeda (BRL/USD) e recomendações de sinergia (EDHREC).
-- **Deck Builder & Análise de Commander:** validação de identidade de cor WUBRG e análise funcional por pilares do formato.
-- **Experiência Multiplataforma:** Frontend Web em **React 19 + Vite 8** e aplicativo Mobile em **React Native + Expo SDK 57** com persistência relacional offline via SQLite.
-
----
-
-## 6. Tecnologias Utilizadas
-
-| Camada | Tecnologias Comprovadas |
-| :--- | :--- |
-| **Backend & Motor de Busca** | Rust (Axum, Tokio), Parser estruturado / AST / Lexicon / Conversor NLP PT-BR determinístico |
-| **Banco de Dados & Cache** | PostgreSQL 16 (`pg_trgm`, Full-Text Search, índices GIN), Redis 7 Alpine |
-| **APIs & Fontes de Dados** | Scryfall (118k+ cartas / 123k+ faces), EDHREC (sinergias/metagame), LigaMagic (cotações BRL) |
-| **Clientes Web & Mobile** | React 19 + Vite 8 (Web), React Native + Expo SDK 57 + SQLite offline (Mobile) |
-| **Infraestrutura** | Docker Multi-Stage, Docker Compose, Nginx e Coolify |
-
----
-
-## 7. Arquitetura do Mecanismo de Busca (Conceitual Autorizado)
-
-```text
-  Consulta em Português (ex.: "criatura verde que gera mana custo até 2")
-                                    │
-                                    ▼
-┌────────────────────────────────────────────────────────────────────────┐
-│            Mecanismo Autoral de Busca (100% Determinístico)            │
-│  [ Normalização & Léxico PT-BR ] → [ Mapeamento Keywords / Regras ]    │
-│                 → [ Parser & AST ] → [ SQL Query Builder ]             │
-└────────────────────────────────────────────────────────────────────────┘
-                                    │
-                 ┌──────────────────┴──────────────────┐
-                 ▼                                     ▼
-   [ PostgreSQL 16 (pg_trgm + GIN) ]        [ Cache Redis 7 + APIs ]
-     118k+ cartas · 123k+ faces             Scryfall · EDHREC · LigaMagic
-```
-
----
-
-## 8. Capturas Reais (Desktop & Mobile) & Representação do Motor de Busca
+## 📸 Prints Reais em Produção
 
 ### 💻 Versão Desktop (`https://mtgrimo.com/`)
+
 <table>
   <tr>
     <td align="center" width="50%">
-      <img src="../assets/mtgrimo-home.png" alt="MTGrimo — Página Inicial e Catálogo" width="100%" /><br/>
-      <strong>Interface Principal &amp; Catálogo</strong><br/>
-      <sub>118.000+ cartas indexadas em português</sub>
+      <img src="../assets/mtgrimo-home.png" alt="MTGrimo — Interface Principal" width="100%" /><br/>
+      <strong>Grimório &amp; Catálogo Principal</strong><br/>
+      <sub>Busca instantânea em português sobre 118k+ cartas</sub>
     </td>
     <td align="center" width="50%">
-      <img src="../assets/mtgrimo-busca.png" alt="MTGrimo — Busca em Linguagem Natural PT-BR" width="100%" /><br/>
-      <strong>Busca NLP Determinística PT-BR</strong><br/>
-      <sub><em>"criatura verde que gera mana"</em> &rarr; 3 filtros + preços em BRL</sub>
+      <img src="../assets/mtgrimo-busca.png" alt="MTGrimo — Busca NLP PT-BR em Ação" width="100%" /><br/>
+      <strong>NLP PT-BR em Ação</strong><br/>
+      <sub><em>"criatura verde que gera mana"</em> &rarr; <strong>Entendi 3 filtros</strong> + preços em BRL</sub>
     </td>
   </tr>
 </table>
 
+### Decks da Comunidade (Top 10, Brackets & Arquétipos)
+![MTGrimo — Decks da Comunidade](../assets/mtgrimo-comunidade.png)
+
+---
+
 ### 📱 Versão Mobile (Responsivo)
-<p align="center">
-  <img src="../assets/mtgrimo-mobile-home.png" alt="MTGrimo Mobile — Busca Inteligente em Português" width="300" /><br/>
-  <strong>Busca Inteligente Mobile</strong> — <sub>Filtros semânticos em PT-BR, preços em reais e navegação por abas</sub>
-</p>
 
-### Diagrama Conceitual do Mecanismo de Busca
-![MTGrimo — Motor Autoral de Busca e NLP Determinístico](../assets/cover-mtgrimo.svg)
-
----
-
-## 9. Resultados Comprováveis
-
-- **Catálogo completo indexado:** busca estruturada e em linguagem natural operando sobre **118.000+ cartas e 123.000+ faces** sincronizadas do Scryfall.
-- **Previsibilidade sem custo por token:** a conversão determinística PT-BR → AST → SQL elimina latência de LLMs externos e garante respostas reproduzíveis para a mesma entrada.
-- **Cobertura arquitetural consolidada:** as 13 fases estruturais da plataforma (incluindo busca avançada, cotações multimoeda, sinergias EDHREC e parser semântico PT-BR) constam concluídas e cobertas por testes unitários e de integração.
-
----
-
-## 10. Link para Demonstração
-
-- **Plataforma Web em Produção:** [https://mtgrimo.com/](https://mtgrimo.com/)
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <img src="../assets/mtgrimo-mobile-home.png" alt="MTGrimo Mobile — Busca NLP PT-BR" width="290" /><br/>
+      <strong>Busca Semântica Mobile</strong><br/>
+      <sub>Filtros em português, cotações em R$ e rolagem infinita</sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="../assets/mtgrimo-mobile-comunidade.png" alt="MTGrimo Mobile — Comunidade" width="290" /><br/>
+      <strong>Decks da Comunidade Mobile</strong><br/>
+      <sub>Ranking, votação e navegação por abas</sub>
+    </td>
+  </tr>
+</table>
 
 ---
 
-[← Voltar ao Portfólio Principal](../README.md)
+## 🧠 Pipeline do Motor de Busca Determinístico
+
+```mermaid
+flowchart LR
+    Q["Consulta em Português\n'criatura verde que gera mana'"] --> Lex["Normalização & Léxico PT-BR"]
+    Lex --> Map["Mapeamento de Regras / Oracle"]
+    Map --> AST["Parser & Árvore Sintática (AST)"]
+    AST --> SQL["SQL Query Builder (Rust / Axum)"]
+    SQL --> PG[("PostgreSQL 16\npg_trgm + FTS + GIN\n118k+ cartas")]
+    SQL --> RD[("Redis 7 Cache\nScryfall • EDHREC • LigaMagic BRL")]
+```
+
+<details>
+<summary><strong>🛠️ Stack & Resultados Comprováveis</strong></summary>
+
+- **Motor & Backend:** Rust (Axum, Tokio), parser estruturado PT-BR → AST → SQL determinístico (zero custo por token e resultados 100% reproduzíveis).
+- **Dados & APIs:** PostgreSQL 16 (`pg_trgm` + índices GIN), Redis 7, Scryfall (118k+ cartas / 123k+ faces), EDHREC (sinergias Commander) e LigaMagic (cotações BRL).
+- **Clientes:** Web PWA em React 19 + Vite 8 e Mobile em React Native + Expo SDK 57 com persistência offline SQLite.
+
+</details>
+
+---
+
+<div align="center">
+  <a href="https://mtgrimo.com/"><strong>🌐 Acessar MTGrimo em Produção</strong></a> &nbsp;•&nbsp; <a href="../README.md"><strong>← Voltar ao Portfólio Principal</strong></a>
+</div>

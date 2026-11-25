@@ -1,157 +1,183 @@
-# Estudo de Caso — FisioTeraHub (Plataforma SaaS Multi-tenant para Clínicas de Fisioterapia)
+<div align="center">
 
-> **Status do repositório:** Privado (Produto Comercial)  
-> **Nota de confidencialidade:** este documento apresenta arquitetura autorizada, decisões técnicas e resultados reais de benchmark sem expor código-fonte proprietário, esquemas internos de banco, credenciais ou dados de clínicas/pacientes. Todas as capturas de tela exibem exclusivamente ambiente de homologação com dados fictícios de seed (`Clínica Movimento`).
+# 🩺 FisioTeraHub — SaaS Multi-tenant para Clínicas de Fisioterapia
 
-[← Voltar ao Portfólio Principal](../README.md)
+**Do agendamento ao prontuário imutável (COFFITO/LGPD), convênios ANS TISS 4.01 e 57.064 RPS em 1 vCPU.**
 
----
+<p>
+  <img src="https://img.shields.io/badge/Node.js-20-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js 20" />
+  <img src="https://img.shields.io/badge/TypeScript-5.8-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/React-18_%2B_Vite-149ECA?style=for-the-badge&logo=react&logoColor=white" alt="React 18" />
+  <img src="https://img.shields.io/badge/PostgreSQL-16_%2B_Prisma-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL 16" />
+  <img src="https://img.shields.io/badge/Cloudflare-57.064_RPS-F38020?style=for-the-badge&logo=cloudflare&logoColor=white" alt="57.064 RPS" />
+</p>
 
-## 1. Contexto
+<p>
+  <img src="https://img.shields.io/badge/M%C3%B3dulos_Backend-22-0d9488?style=flat-square" alt="22 Módulos" />
+  <img src="https://img.shields.io/badge/Modelos_Prisma-38-6366f1?style=flat-square" alt="38 Modelos" />
+  <img src="https://img.shields.io/badge/Conformidade-COFFITO_%7C_LGPD_%7C_ANS_TISS_4.01-10b981?style=flat-square" alt="Conformidade" />
+  <img src="https://img.shields.io/badge/Produ%C3%A7%C3%A3o-fisioterahub.com-000000?style=flat-square" alt="Produção" />
+</p>
 
-O **FisioTeraHub** é uma plataforma SaaS B2B Multi-tenant voltada à gestão completa de clínicas de fisioterapia e reabilitação no Brasil. O sistema foi concebido para operar de ponta a ponta — da recepção e agendamento ao prontuário clínico imutável, faturamento de convênios médicos e gestão financeira — atendendo exigências regulatórias do setor de saúde brasileiro.
+[← Voltar ao Portfólio Principal](../README.md) • [🌐 Acessar Plataforma](https://fisioterahub.com) • [📸 Tour pelos Módulos](#-tour-pelos-módulos-prints-reais) • [⚡ Benchmark 57k RPS](#-benchmark-real-de-carga-57064-rps-em-1-vcpu)
 
----
+</div>
 
-## 2. Problema Identificado
-
-Clínicas de fisioterapia de pequeno e médio porte frequentemente enfrentam fragmentação operacional:
-- Agendamentos controlados em planilhas ou aplicativos de mensagem sem controle de salas, profissionais ou fila de atendimento.
-- Prontuários em papel ou editáveis sem rastreabilidade temporal, em desacordo com exigências do **COFFITO** e da **LGPD**.
-- Alta complexidade manual no faturamento de convênios no padrão **ANS TISS / TUSS** e na conciliação financeira (Pix, boletos, repasses e inadimplência).
-- Gargalo de infraestrutura em servidores enxutos durante picos de acesso simultâneo à agenda e portais públicos.
-
----
-
-## 3. Objetivo
-
-Desenvolver uma plataforma web única, segura, auditável e financeiramente sustentável em nuvem, capaz de:
-1. Centralizar operação clínica, agenda, financeiro, convênios e portal do paciente com isolamento estrito por clínica (*multi-tenancy*).
-2. Garantir conformidade regulatória brasileira (**ANS TISS 4.01**, **TUSS**, **COFFITO**, **LGPD** e **DMED**).
-3. Suportar alta concorrência mesmo em hospedagem enxuta (1 vCPU / 2 GB RAM) por meio de engenharia de performance e cache inteligente.
+> **Nota de confidencialidade:** produto comercial de código privado. Todas as capturas abaixo foram registradas em ambiente demonstrativo com dados fictícios (`Clínica OrthoVita`), sem expor código proprietário ou dados reais de pacientes.
 
 ---
 
-## 4. Solução Desenvolvida
+## 💡 O Desafio
 
-Foi construída uma arquitetura de **Monólito Modular** em workspaces TypeScript (`backend` + `frontend`), conteinerizada via Docker Compose com proxy reverso Nginx e camada de proteção/microcache em borda (Cloudflare):
-- **22 módulos de domínio no backend** cobrindo autenticação, papéis/permissões, pacientes, triagem, prontuário clínico, agenda, turmas, sessões, financeiro, cobrança, convênios, tabela TUSS, comunicação, auditoria, assinaturas SaaS e painel SuperAdmin.
-- **38 modelos relacionais via Prisma ORM** com escopo obrigatório de `tenantId` e trilha de auditoria LGPD.
-- **Segurança de sessão no padrão OWASP** com Access Token em memória e Refresh Token rotacionado em Cookie `HttpOnly, Secure, SameSite=Strict`.
+Clínicas de fisioterapia e Pilates frequentemente operam no improviso: agenda no WhatsApp, prontuários em papel sem rastreabilidade (**COFFITO / LGPD**), faturamento manual de guias **ANS TISS / TUSS** e planilhas financeiras desconectadas. O **FisioTeraHub** unifica toda a clínica em um SaaS multi-tenant seguro, auditável e absurdamente rápido mesmo rodando em uma VPS enxuta de **1 vCPU / 2 GB RAM**.
 
 ---
 
-## 5. Principais Funcionalidades
+## 📸 Tour pelos Módulos (Prints Reais)
 
-- **Gestão de Pacientes & Portal do Paciente:** cadastro completo, importação/exportação validada, senha segura de portal e prescrição de exercícios domiciliares.
-- **Prontuário Longitudinal Imutável:** evolução clínica com rastreabilidade, proteção contra alteração retroativa (alinhada ao COFFITO/LGPD) e exportação documental em PDF (`PDFKit`).
-- **Agenda Clínica, Kanban & Turmas:** visualização por profissional/sala/status em tempo real, reagendamento controlado e gestão de turmas de atendimento.
-- **Convênios ANS TISS 4.01 & Tabela TUSS:** cadastro de operadoras, códigos TUSS de fisioterapia e geração estruturada de guias/lotes XML TISS.
-- **Financeiro & Cobrança:** contas a pagar/receber, boletos FEBRABAN/Pix, importação OFX, assinaturas integradas ao **Asaas** e relatórios gerenciais.
-- **Comunicação & Notificações:** integração com e-mail transacional (**Resend**) e **WhatsApp** (Evolution API).
-- **RBAC Granular & SuperAdmin SaaS:** matriz de permissões por perfil e gerenciamento centralizado de planos e tenants.
+### 1. Página Pública & Dashboard Executivo
+Entrada comercial focada em conversão e painel gerencial com indicadores em tempo real, ações rápidas do dia, status dos módulos contratados e auditoria de acessos recentes.
 
----
-
-## 6. Tecnologias Utilizadas
-
-| Camada | Tecnologias Comprovadas |
-| :--- | :--- |
-| **Backend** | Node.js 20, TypeScript 5.8, Express 4, Prisma ORM 6, Zod, Bcrypt, JWT + Refresh Token (`HttpOnly`), Helmet, Rate-Limit, PDFKit |
-| **Frontend** | React 18, TypeScript, Vite 6, Tailwind CSS, TanStack Query v5, React Hook Form, React Router v7, Lucide Icons |
-| **Banco de Dados** | PostgreSQL 16 (produção) e SQLite (desenvolvimento local zero-config) |
-| **Integrações** | Asaas (pagamentos/assinaturas), Resend (e-mail), Evolution API (WhatsApp) |
-| **Infraestrutura & QA** | Docker, Docker Compose, Nginx, Coolify, Cloudflare (Origin Shielding / RFC 9111), Playwright, Locust, Loader.io |
-
----
-
-## 7. Arquitetura (Nível Conceitual Autorizado)
-
-```text
-[ Cliente Web / Portal do Paciente ]
-                │
-                ▼
-┌───────────────────────────────────────────────┐
-│ Cloudflare Edge (Origin Shielding · RFC 9111) │
-│ • Rotas públicas/agenda: s-maxage=5 + SWR     │
-│ • Assets Vite: max-age=1 ano, immutable       │
-│ • Rotas LGPD/clínicas: private, no-store      │
-└───────────────────────────────────────────────┘
-                │
-                ▼
-┌───────────────────────────────────────────────┐
-│ VPS 1 vCPU / 2 GB RAM (Docker Compose)        │
-│ • Nginx (Proxy Reverso · gzip off p/ offload) │
-│ • API Express Modular (22 módulos + RBAC)     │
-│ • Prisma ORM (Nested Writes + Batch Queries)  │
-│ • PostgreSQL 16 (Isolamento Multi-tenant)     │
-└───────────────────────────────────────────────┘
-```
-
-Para rotas de escrita (onde não há cache), foram aplicadas quatro salvaguardas arquiteturais: **Nested Writes atômicos** no ORM, **eliminação de consultas N+1** via resolução em lote (`findMany` com `in` e `createMany`), **projeções cirúrgicas (`select`)** evitando `SELECT *` e cabeçalhos estritos `Cache-Control: private, no-store, no-cache, must-revalidate` em todos os dados protegidos por LGPD.
-
----
-
-## 8. Capturas de Tela (Desktop & Mobile — Produção e Homologação)
-
-### 💻 Versão Desktop
 <table>
   <tr>
     <td align="center" width="50%">
-      <img src="../assets/fisio-home.png" alt="FisioTeraHub — Página Inicial Pública" width="100%" /><br/>
-      <strong>Página Inicial Pública</strong><br/>
+      <img src="../assets/fisio-home.png" alt="FisioTeraHub — Landing Page Pública" width="100%" /><br/>
+      <strong>Landing Page Pública</strong><br/>
       <sub><code>https://fisioterahub.com</code></sub>
     </td>
     <td align="center" width="50%">
       <img src="../assets/fisio-dashboard.png" alt="FisioTeraHub — Dashboard Executivo" width="100%" /><br/>
-      <strong>Dashboard Executivo e Visão Operacional</strong><br/>
-      <sub>Indicadores em tempo real da clínica</sub>
+      <strong>Painel de Gestão Clínica</strong><br/>
+      <sub>KPIs do dia, ações rápidas e status multi-filial</sub>
     </td>
   </tr>
 </table>
 
-### Agenda Clínica e Acompanhamento de Atendimentos (Desktop)
-![FisioTeraHub — Agenda Clínica](../assets/fisio-agenda.png)
+---
 
-### 📱 Versão Mobile (Responsivo)
+### 2. Agenda Clínica, Pacientes & Turmas de Pilates
+Controle visual de horários por profissional e sala, gestão completa de prontuários longitudinais imutáveis e organização de turmas/grupos recorrentes.
+
 <table>
   <tr>
     <td align="center" width="50%">
-      <img src="../assets/fisio-mobile-home.png" alt="FisioTeraHub Mobile — Página Inicial" width="280" /><br/>
-      <strong>Home Mobile</strong><br/>
-      <sub>CTA flutuante e acesso rápido ao painel</sub>
+      <img src="../assets/fisio-agenda.png" alt="FisioTeraHub — Agenda Clínica" width="100%" /><br/>
+      <strong>Agenda Clínica Inteligente</strong><br/>
+      <sub>Visão por status, profissional e sala</sub>
     </td>
     <td align="center" width="50%">
-      <img src="../assets/fisio-mobile-features.png" alt="FisioTeraHub Mobile — Conformidade COFFITO, TISS e LGPD" width="280" /><br/>
-      <strong>Conformidade &amp; Prévia do Painel</strong><br/>
-      <sub>COFFITO/CIF, ANS TISS 4.01 e LGPD Médica</sub>
+      <img src="../assets/fisio-pacientes.png" alt="FisioTeraHub — Gestão de Pacientes" width="100%" /><br/>
+      <strong>Gestão de Pacientes &amp; Prontuários</strong><br/>
+      <sub>Evolução imutável alinhada ao COFFITO e LGPD</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <img src="../assets/fisio-turmas.png" alt="FisioTeraHub — Turmas e Grupos" width="100%" /><br/>
+      <strong>Turmas &amp; Grupos (Pilates / Reabilitação)</strong><br/>
+      <sub>Controle de vagas, horários e frequência</sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="../assets/fisio-exercicios.png" alt="FisioTeraHub — Banco de Exercícios Domiciliares" width="100%" /><br/>
+      <strong>Banco de Exercícios Domiciliares</strong><br/>
+      <sub>Biblioteca com vídeos do YouTube e prescrição ao paciente</sub>
     </td>
   </tr>
 </table>
 
 ---
 
-## 9. Resultados Comprováveis (Benchmark de Carga Real)
+### 3. Financeiro, Convênios ANS TISS 4.01 & Comunicação WhatsApp
+Faturamento completo com Pix/boletos (Asaas), importação OFX, tabela TUSS + geração de lotes XML TISS e régua automática de lembretes no WhatsApp (Evolution API) e e-mail (Resend).
 
-Em ciclo de testes de estresse conduzido no **Loader.io** com **10.000 clientes simultâneos contínuos** sobre a infraestrutura de **1 vCPU / 2 GB RAM** (documentado no estudo técnico interno de setembro/2026):
+<table>
+  <tr>
+    <td align="center" width="33%">
+      <img src="../assets/fisio-financeiro.png" alt="FisioTeraHub — Financeiro" width="100%" /><br/>
+      <strong>Financeiro &amp; Cobranças</strong><br/>
+      <sub>Contas, Pix, boletos FEBRABAN e OFX</sub>
+    </td>
+    <td align="center" width="33%">
+      <img src="../assets/fisio-convenios.png" alt="FisioTeraHub — Convênios e TISS" width="100%" /><br/>
+      <strong>Convênios &amp; ANS TISS 4.01</strong><br/>
+      <sub>Operadoras, códigos TUSS e lotes XML</sub>
+    </td>
+    <td align="center" width="33%">
+      <img src="../assets/fisio-comunicacao.png" alt="FisioTeraHub — Comunicação e WhatsApp" width="100%" /><br/>
+      <strong>Comunicação &amp; WhatsApp</strong><br/>
+      <sub>Lembretes automáticos anti-faltas</sub>
+    </td>
+  </tr>
+</table>
 
-| Métrica de Carga | Baseline (Sem Edge Cache) | Com Edge Microcaching (RFC 9111) | Impacto Comprovado |
+---
+
+### 📱 Experiência Mobile (Celular & Tablet)
+
+<table>
+  <tr>
+    <td align="center" width="25%">
+      <img src="../assets/fisio-mobile-home.png" alt="FisioTeraHub Mobile — Home" width="100%" /><br/>
+      <strong>Landing Mobile</strong>
+    </td>
+    <td align="center" width="25%">
+      <img src="../assets/fisio-mobile-features.png" alt="FisioTeraHub Mobile — Recursos" width="100%" /><br/>
+      <strong>COFFITO &amp; TISS</strong>
+    </td>
+    <td align="center" width="25%">
+      <img src="../assets/fisio-mobile-dashboard.png" alt="FisioTeraHub Mobile — Dashboard" width="100%" /><br/>
+      <strong>Dashboard Mobile</strong>
+    </td>
+    <td align="center" width="25%">
+      <img src="../assets/fisio-mobile-agenda.png" alt="FisioTeraHub Mobile — Agenda" width="100%" /><br/>
+      <strong>Agenda Mobile</strong>
+    </td>
+  </tr>
+</table>
+
+---
+
+## 🧠 Arquitetura & Edge Microcaching
+
+```mermaid
+flowchart LR
+    Client["Navegador / Mobile / Portal do Paciente"]
+    CF["Cloudflare Edge\nOrigin Shielding + RFC 9111\n(99,997% Cache Hit)"]
+    Nginx["Nginx Proxy Reverso\n(VPS 1 vCPU / 2 GB RAM)"]
+    API["API Express Modular\n22 Módulos + RBAC + OWASP JWT"]
+    DB[("PostgreSQL 16\n38 Modelos Prisma Multi-tenant")]
+    EXT["Asaas • Resend • Evolution WhatsApp"]
+
+    Client --> CF --> Nginx --> API --> DB
+    API --> EXT
+```
+
+---
+
+## ⚡ Benchmark Real de Carga (57.064 RPS em 1 vCPU)
+
+Testes reais de estresse executados no **Loader.io** com **10.000 clientes simultâneos contínuos** sobre uma VPS de **1 vCPU / 2 GB RAM**:
+
+| Métrica | Sem Edge Cache | Com Edge Microcaching (RFC 9111) | Ganho Real |
 | :--- | :---: | :---: | :---: |
-| **Vazão Média (RPS)** | ~2.508 RPS *(saturação em ~1.350 clientes)* | **~57.064 RPS** | **+2.175% de capacidade** |
-| **Requisições em 1 minuto** | 150.527 | **3.423.876** | +3,27 milhões de reqs |
-| **Latência Média** | 4.549 ms | **68 ms** *(mínima de 5 ms)* | **-98,5% de latência** |
-| **Taxa de Timeouts / Erros** | 14,4% (5.802 timeouts) | **0,0% (Zero erros)** | 100% de estabilidade |
-| **Cache Hit Ratio na Borda** | — | **99,997%** | 12,06 GB offloaded |
+| **Vazão Média (RPS)** | ~2.508 RPS | **~57.064 RPS** | **+2.175%** |
+| **Requisições em 1 min** | 150.527 | **3.423.876** | +3,27 milhões |
+| **Latência Média** | 4.549 ms | **68 ms** *(mín. 5 ms)* | **-98,5%** |
+| **Timeouts / Erros** | 14,4% (5.802) | **0,0% (Zero erros)** | 100% estável |
 | **CPU da VPS sob Pico** | 100% saturada | **~10% (repouso)** | Origem protegida |
 
-Além do benchmark de carga, a suíte automatizada cobre testes críticos de segurança, TOTP, importação OFX, importação/exportação de pacientes, senha de portal e reagendamento clínico.
+<details>
+<summary><strong>🛠️ Stack Completa & Salvaguardas de Engenharia</strong></summary>
+
+- **Backend:** Node.js 20, TypeScript 5.8, Express 4, Prisma ORM 6, Zod, JWT em memória + Refresh Token rotacionado em Cookie `HttpOnly, Secure, SameSite=Strict`, Helmet, Rate-Limit e PDFKit.
+- **Frontend:** React 18, Vite 6, Tailwind CSS, TanStack Query v5, React Hook Form e React Router v7.
+- **Banco & Performance:** PostgreSQL 16 com `tenantId` obrigatório, Nested Writes atômicos, eliminação de N+1 (`findMany` em lote), projeções `select` cirúrgicas e `Cache-Control: private, no-store` em todas as rotas LGPD.
+- **Integrações:** Asaas (Pix, boletos e assinaturas), Resend (e-mail transacional) e Evolution API (WhatsApp).
+
+</details>
 
 ---
 
-## 10. Link para Demonstração
-
-- **Plataforma em Produção:** [https://fisioterahub.com](https://fisioterahub.com)
-
----
-
-[← Voltar ao Portfólio Principal](../README.md)
+<div align="center">
+  <a href="https://fisioterahub.com"><strong>🌐 Acessar FisioTeraHub em Produção</strong></a> &nbsp;•&nbsp; <a href="../README.md"><strong>← Voltar ao Portfólio Principal</strong></a>
+</div>
