@@ -230,7 +230,7 @@ Essa base multidisciplinar faz diferença prática no resultado final: antes de 
 
 ---
 
-## 06. Trajetória Integrada
+## 06. Trajetória
 
 ```mermaid
 flowchart LR
