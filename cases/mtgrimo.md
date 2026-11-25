@@ -82,10 +82,29 @@ Minha atuação concentrou-se no núcleo de busca e interpretação semântica q
 
 ---
 
-## 8. Captura Real & Representação do Motor de Busca
+## 8. Capturas Reais (Desktop & Mobile) & Representação do Motor de Busca
 
-### Busca Inteligente em Produção (`https://mtgrimo.com/`)
-![MTGrimo — Interface de Busca Inteligente e Catálogo em Português](../assets/mtgrimo-home.png)
+### 💻 Versão Desktop (`https://mtgrimo.com/`)
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <img src="../assets/mtgrimo-home.png" alt="MTGrimo — Página Inicial e Catálogo" width="100%" /><br/>
+      <strong>Interface Principal &amp; Catálogo</strong><br/>
+      <sub>118.000+ cartas indexadas em português</sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="../assets/mtgrimo-busca.png" alt="MTGrimo — Busca em Linguagem Natural PT-BR" width="100%" /><br/>
+      <strong>Busca NLP Determinística PT-BR</strong><br/>
+      <sub><em>"criatura verde que gera mana"</em> &rarr; 3 filtros + preços em BRL</sub>
+    </td>
+  </tr>
+</table>
+
+### 📱 Versão Mobile (Responsivo)
+<p align="center">
+  <img src="../assets/mtgrimo-mobile-home.png" alt="MTGrimo Mobile — Busca Inteligente em Português" width="300" /><br/>
+  <strong>Busca Inteligente Mobile</strong> — <sub>Filtros semânticos em PT-BR, preços em reais e navegação por abas</sub>
+</p>
 
 ### Diagrama Conceitual do Mecanismo de Busca
 ![MTGrimo — Motor Autoral de Busca e NLP Determinístico](../assets/cover-mtgrimo.svg)

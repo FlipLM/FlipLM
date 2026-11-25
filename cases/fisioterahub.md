@@ -92,16 +92,42 @@ Para rotas de escrita (onde não há cache), foram aplicadas quatro salvaguardas
 
 ---
 
-## 8. Capturas de Tela (Página Pública e Homologação — Dados Fictícios)
+## 8. Capturas de Tela (Desktop & Mobile — Produção e Homologação)
 
-### Página Inicial Pública (`https://fisioterahub.com`)
-![FisioTeraHub — Página Inicial Pública](../assets/fisio-home.png)
+### 💻 Versão Desktop
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <img src="../assets/fisio-home.png" alt="FisioTeraHub — Página Inicial Pública" width="100%" /><br/>
+      <strong>Página Inicial Pública</strong><br/>
+      <sub><code>https://fisioterahub.com</code></sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="../assets/fisio-dashboard.png" alt="FisioTeraHub — Dashboard Executivo" width="100%" /><br/>
+      <strong>Dashboard Executivo e Visão Operacional</strong><br/>
+      <sub>Indicadores em tempo real da clínica</sub>
+    </td>
+  </tr>
+</table>
 
-### Dashboard Executivo e Visão Operacional
-![FisioTeraHub — Dashboard Executivo](../assets/fisio-dashboard.png)
-
-### Agenda Clínica e Acompanhamento de Atendimentos
+### Agenda Clínica e Acompanhamento de Atendimentos (Desktop)
 ![FisioTeraHub — Agenda Clínica](../assets/fisio-agenda.png)
+
+### 📱 Versão Mobile (Responsivo)
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <img src="../assets/fisio-mobile-home.png" alt="FisioTeraHub Mobile — Página Inicial" width="280" /><br/>
+      <strong>Home Mobile</strong><br/>
+      <sub>CTA flutuante e acesso rápido ao painel</sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="../assets/fisio-mobile-features.png" alt="FisioTeraHub Mobile — Conformidade COFFITO, TISS e LGPD" width="280" /><br/>
+      <strong>Conformidade &amp; Prévia do Painel</strong><br/>
+      <sub>COFFITO/CIF, ANS TISS 4.01 e LGPD Médica</sub>
+    </td>
+  </tr>
+</table>
 
 ---
 

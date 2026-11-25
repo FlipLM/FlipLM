@@ -85,10 +85,39 @@ Foi desenvolvida uma aplicação SPA moderna em **React 19 + Vite 8 + Tailwind C
 
 ---
 
-## 8. Captura Real & Identidade Visual Entregue
+## 8. Capturas Reais (Desktop & Mobile) & Identidade Visual Entregue
 
-### Portal Institucional em Produção (`https://cia-do-lacre.vercel.app/`)
-![Associação Cia do Lacre — Portal Institucional em Produção](../assets/cia-home.png)
+### 💻 Versão Desktop (`https://cia-do-lacre.vercel.app/`)
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <img src="../assets/cia-home.png" alt="Associação Cia do Lacre — Portal Institucional" width="100%" /><br/>
+      <strong>Portal Institucional (Olive System)</strong><br/>
+      <sub>Identidade editorial, cursos e história desde 1997</sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="../assets/cia-transparencia.png" alt="Associação Cia do Lacre — Portal da Transparência MROSC" width="100%" /><br/>
+      <strong>Portal da Transparência Ativa (MROSC)</strong><br/>
+      <sub>Lei 13.019/2014, filtros por órgão e visualizador embutido</sub>
+    </td>
+  </tr>
+</table>
+
+### 📱 Versão Mobile (Responsivo)
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <img src="../assets/cia-mobile-home.png" alt="Cia do Lacre Mobile — Home Institucional" width="280" /><br/>
+      <strong>Home Mobile</strong><br/>
+      <sub>29 anos de atuação, 450+ mulheres capacitadas e 8 cursos</sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="../assets/cia-mobile-transparencia.png" alt="Cia do Lacre Mobile — Transparência MROSC" width="280" /><br/>
+      <strong>Transparência MROSC Mobile</strong><br/>
+      <sub>Busca por projeto/SEI e consulta pública no celular</sub>
+    </td>
+  </tr>
+</table>
 
 ### Síntese Visual & Estrutura Entregue
 <picture>

@@ -87,13 +87,39 @@ Foi implementada uma aplicação full-stack em **Next.js 14 (App Router)** com *
 
 ---
 
-## 8. Capturas Reais & Identidade Visual
+## 8. Capturas Reais (Desktop & Mobile) & Identidade Visual
 
-### Página Inicial Pública (`https://vulpto.duckdns.org/`)
-![Vulpto — Página Inicial Pública e Apresentação do Produto](../assets/vulpto-home.png)
+### 💻 Versão Desktop (`https://vulpto.duckdns.org/`)
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <img src="../assets/vulpto-home.png" alt="Vulpto — Página Inicial Pública" width="100%" /><br/>
+      <strong>Página Inicial Pública</strong><br/>
+      <sub>Apresentação do produto e onboarding SaaS</sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="../assets/vulpto-showcase.png" alt="Vulpto — Showcase Pátio Kanban e Preços por Porte" width="100%" /><br/>
+      <strong>Showcase Interativo</strong><br/>
+      <sub>Pátio Kanban e matriz de preços por porte</sub>
+    </td>
+  </tr>
+</table>
 
-### Showcase Interativo de Módulos Operacionais
-![Vulpto — Showcase Pátio Kanban e Preços por Porte](../assets/vulpto-showcase.png)
+### 📱 Versão Mobile (Responsivo + Vistoria 3D Interativa)
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <img src="../assets/vulpto-mobile-home.png" alt="Vulpto Mobile — Página Inicial" width="280" /><br/>
+      <strong>Home Mobile</strong><br/>
+      <sub>Experiência mobile para celular e tablet no pátio</sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="../assets/vulpto-mobile-showcase.png" alt="Vulpto Mobile — Vistoria 3D Interativa" width="280" /><br/>
+      <strong>Vistoria 3D Interativa no Celular</strong><br/>
+      <sub>Marcação de avarias em modelo 3D (Three.js)</sub>
+    </td>
+  </tr>
+</table>
 
 ### Visão Resumida do Produto e Módulos
 ![Vulpto — Visão do Produto e Módulos](../assets/cover-vulpto.svg)
