@@ -40,41 +40,65 @@ O **CPRE Studio** foi construído como uma plataforma Full Stack completa de est
 
 ## 3. Capturas de Tela (Ambiente em Produção)
 
-### Visão Geral (Home — Dashboard SWR e Recomendações Priorizadas)
-![CPRE Studio — Visão Geral](../assets/ireb-dashboard.png)
+### 💻 Desktop — Visão Geral, Estudo, Simulados & Relatórios
 
-### Modo Estudo com Prof. IREB (Tutor Interativo em Pixel Art + RAG)
-![CPRE Studio — Modo Estudo com Prof. IREB](../assets/ireb-estudar.png)
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <img src="../assets/ireb-dashboard.png" alt="CPRE Studio — Visão Geral" width="100%" /><br/>
+      <strong>Visão Geral (Home SWR 0ms)</strong>
+    </td>
+    <td align="center" width="50%">
+      <img src="../assets/ireb-estudar.png" alt="CPRE Studio — Modo Estudo com Prof. IREB" width="100%" /><br/>
+      <strong>Modo Estudo + Prof. IREB (Pixel Art + RAG)</strong>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <img src="../assets/ireb-simulados.png" alt="CPRE Studio — Simulados" width="100%" /><br/>
+      <strong>Simulados Cronometrados</strong>
+    </td>
+    <td align="center" width="50%">
+      <img src="../assets/ireb-relatorios.png" alt="CPRE Studio — Relatórios e Mapa de Domínio" width="100%" /><br/>
+      <strong>Relatórios e Mapa de Domínio</strong>
+    </td>
+  </tr>
+</table>
 
-### Configurador de Simulados Cronometrados
-![CPRE Studio — Simulados](../assets/ireb-simulados.png)
+### ⚔️ Desktop — Módulo RPG (Jornada do Herói ao vivo)
 
-### Relatórios e Mapa de Domínio por Assunto
-![CPRE Studio — Relatórios e Mapa de Domínio](../assets/ireb-relatorios.png)
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <img src="https://raw.githubusercontent.com/FlipLM/ireb-cpre-studio/main/docs/screenshots/ireb-rpg-mapa.png" alt="CPRE Studio — Mapa da Dungeon no RPG" width="100%" /><br/>
+      <strong>Mapa DAG de Nós (Gruta Esquecida — 10 níveis)</strong>
+    </td>
+    <td align="center" width="50%">
+      <img src="https://raw.githubusercontent.com/FlipLM/ireb-cpre-studio/main/docs/screenshots/ireb-rpg-combate.png" alt="CPRE Studio — Arena de Combate RPG" width="100%" /><br/>
+      <strong>Arena de Combate Tático Local-First</strong>
+    </td>
+  </tr>
+</table>
 
-### Módulo RPG — Jornada do Herói (4 Regiões, Heróis e Chefes Discursivos)
+### 📱 Versão Mobile (PWA Instalável)
 
 <table>
   <tr>
     <td align="center" width="25%">
-      <img src="https://raw.githubusercontent.com/FlipLM/ireb-cpre-studio/main/public/rpg/backgrounds/gruta-esquecida.jpg" alt="Gruta Esquecida" width="100%" /><br/>
-      <img src="https://raw.githubusercontent.com/FlipLM/ireb-cpre-studio/main/public/rpg/bosses/boss-gruta-guardiao.png" alt="Arquivista de Pedra" width="72" /><br/>
-      <strong>Gruta Esquecida</strong><br/><sub>Arquivista de Pedra</sub>
+      <img src="https://raw.githubusercontent.com/FlipLM/ireb-cpre-studio/main/docs/screenshots/ireb-mobile-dashboard.png" alt="CPRE Studio Mobile — Visão Geral" width="100%" /><br/>
+      <strong>Visão Geral</strong>
     </td>
     <td align="center" width="25%">
-      <img src="https://raw.githubusercontent.com/FlipLM/ireb-cpre-studio/main/public/rpg/backgrounds/caverna-assombrada.jpg" alt="Caverna Assombrada" width="100%" /><br/>
-      <img src="https://raw.githubusercontent.com/FlipLM/ireb-cpre-studio/main/public/rpg/bosses/boss-caverna-espectro.png" alt="Espectro das Ambiguidades" width="72" /><br/>
-      <strong>Caverna Assombrada</strong><br/><sub>Espectro das Ambiguidades</sub>
+      <img src="https://raw.githubusercontent.com/FlipLM/ireb-cpre-studio/main/docs/screenshots/ireb-mobile-estudar.png" alt="CPRE Studio Mobile — Modo Estudo" width="100%" /><br/>
+      <strong>Estudo + Prof. IREB</strong>
     </td>
     <td align="center" width="25%">
-      <img src="https://raw.githubusercontent.com/FlipLM/ireb-cpre-studio/main/public/rpg/backgrounds/caverna-de-fogo.jpg" alt="Caverna de Fogo" width="100%" /><br/>
-      <img src="https://raw.githubusercontent.com/FlipLM/ireb-cpre-studio/main/public/rpg/bosses/boss-fogo-guardiao.png" alt="Guardião Flamejante" width="72" /><br/>
-      <strong>Caverna de Fogo</strong><br/><sub>Guardião Flamejante</sub>
+      <img src="https://raw.githubusercontent.com/FlipLM/ireb-cpre-studio/main/docs/screenshots/ireb-mobile-rpg-mapa.png" alt="CPRE Studio Mobile — Mapa RPG" width="100%" /><br/>
+      <strong>Mapa RPG</strong>
     </td>
     <td align="center" width="25%">
-      <img src="https://raw.githubusercontent.com/FlipLM/ireb-cpre-studio/main/public/rpg/backgrounds/dungeon-de-gelo.jpg" alt="Dungeon de Gelo" width="100%" /><br/>
-      <img src="https://raw.githubusercontent.com/FlipLM/ireb-cpre-studio/main/public/rpg/bosses/boss-gelo-rei.png" alt="Rei Congelado do Syllabus" width="72" /><br/>
-      <strong>Dungeon de Gelo</strong><br/><sub>Rei Congelado do Syllabus</sub>
+      <img src="https://raw.githubusercontent.com/FlipLM/ireb-cpre-studio/main/docs/screenshots/ireb-mobile-rpg-combate.png" alt="CPRE Studio Mobile — Combate RPG" width="100%" /><br/>
+      <strong>Combate RPG</strong>
     </td>
   </tr>
 </table>
