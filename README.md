@@ -117,7 +117,7 @@ Essa base multidisciplinar faz diferença prática no resultado final: antes de 
 
 <table>
   <tr>
-    <td width="33%\" valign="top">
+    <td width="33%" valign="top">
       <a href="https://github.com/FlipLM/market-intelligence-ai">
         <picture>
           <source media="(prefers-color-scheme: dark)" srcset="./assets/cover-prospector-dark.svg">
